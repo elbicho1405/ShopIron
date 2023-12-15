@@ -99,7 +99,7 @@ async function GeneraImag(imageUrl) {
       const imageResults = data.results;
 
       if (imageResults.length > 0) {
-          return imageResults[0].urls.small; // Cambia a la URL del tamaño de imagen que desees usar
+          return imageResults[0].urls.small; 
       } else {
           throw new Error("No se encontraron resultados de imágenes.");
       }
@@ -110,7 +110,7 @@ async function GeneraImag(imageUrl) {
 
 
 function checkearBotones(){
-  let botones = document.querySelectorAll(".btn"); //trae un array
+  let botones = document.querySelectorAll(".btn");
   
   for (let boton of botones) {
     if(admin.admin){
@@ -139,7 +139,9 @@ function checkearBotones(){
     let precio = padre.querySelector("h6").innerText;
     let stock = padre.querySelector("p").innerText;
     let image= padre.parentElement.querySelector("img").src;
-    alert(`Nombre: ${nombre}, Precio: ${precio}, ${stock}`);
+    Swal.fire(
+      `Se a añadido al carrito el producto: ${nombre}, Precio: ${precio}`
+    )  
     let producto = {
       nombre: nombre,
       precio: precio,
