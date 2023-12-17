@@ -83,7 +83,7 @@ if (admin.admin) {
     // inserta imagen de admin
     InsertUser.innerHTML = `
                 <p id="user-name">Administrador</p>
-                <img src="../../assets/imagen/usuario.png" id="user-pic">
+                <img src="./assets/imagen/usuario.png" id="user-pic">
                 `
     NavLogin.innerText = "Cerrar Sesión";
   }
