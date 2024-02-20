@@ -65,20 +65,6 @@ cargarProductos();
 BtnVaciar.addEventListener("click",VaciarCarrito);
 BtnFinalizar.addEventListener("click",FinalizarCompra);
 
-let prodComprados = document.getElementById("ContCar");
-let contadorProductos = localStorage.getItem("ContCar");
-
-function contadorProd() {
-  prodComprados.innerHTML = `${contadorProductos}`;
-  prodComprados.style.display = "block";
-  localStorage.setItem("prod-comprados", contadorProductos);
-}
-if (contadorProductos > 0 && contadorProductos != undefined) {
-  contadorProd();
-} else {
-  prodComprados.style.display = "none";
-}
-
 if (admin.admin) {
     // inserta imagen de admin
     InsertUser.innerHTML = `

@@ -36,18 +36,6 @@ if (AdminLogin.admin) {
 
 
 
-// ------NUMERO CARRITO EN NAVBAR----------
-let ProdComprados = document.getElementById("ContCar");
-let ContadorProductos = localStorage.getItem("ContCar");
-
-function contadorProd() {
-    ProdComprados.innerHTML = `${ContadorProductos}`;
-    ProdComprados.style.display = "block";
-    if (ContadorProductos <= 0 || ContadorProductos == undefined) {
-        ProdComprados.style.display = "none";
-    }
-}
-contadorProd();
 
 // login
 BotonL.onclick = (e) => {
