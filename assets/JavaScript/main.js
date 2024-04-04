@@ -1,6 +1,6 @@
 let containerProductos = document.querySelector(".container-productos");
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-let admin= JSON.parse(localStorage.getItem("adminLogin"));
+let admin= JSON.parse(localStorage.getItem("adminLogin")) || [];
 let boton= document.querySelector("#CargarProd");
 let nombre;
 let precio;
@@ -135,18 +135,12 @@ function checkearBotones(){
       boton.innerText = "Borrar"
     }
     boton.onclick = (e) => {
-      if(admin.admin){
+      if(admin==true){
         BorrarProd(e)
       } else {
       agregarCarrito(e);
     }
     };
-  }
-  let contadorCarrito;
-  if(localStorage.getItem("carrito")){
-    contadorCarrito = localStorage.getItem("carrito").length;
-  } else {
-    contadorCarrito = 0;
   }
   function agregarCarrito(e) {
     let elemento = e.target;
@@ -170,8 +164,6 @@ function checkearBotones(){
     carrito.push(producto);
   
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    contadorCarrito++;
-      
   }
 
   function BorrarProd(e) {
@@ -213,3 +205,5 @@ if (admin.admin) {
               `
   NavLogin.innerText = "Cerrar Sesión";
 }
+
+

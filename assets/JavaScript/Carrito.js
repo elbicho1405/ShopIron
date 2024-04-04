@@ -5,7 +5,7 @@ const BtnVaciar= document.querySelector(".vaciar");
 const BtnFinalizar= document.querySelector(".finalizar");
 let NavLogin = document.getElementById("NavLogin");
 let InsertUser = document.getElementById("UserProfile");
-let admin= JSON.parse(localStorage.getItem("adminLogin"));
+let admin= JSON.parse(localStorage.getItem("adminLogin")) || [];
 
 
 function Borrar(nombre) {
@@ -73,4 +73,6 @@ if (admin.admin) {
                 `
     NavLogin.innerText = "Cerrar Sesión";
   }
+
+
   
